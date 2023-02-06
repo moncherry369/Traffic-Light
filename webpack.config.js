@@ -29,11 +29,18 @@ module.exports = {
           use: ['babel-loader']
         },
         {
-          test: /\.(css)$/, use: [{
-              loader: "style-loader" // creates style nodes from JS strings
-          }, {
-              loader: "css-loader" // translates CSS into CommonJS
-          }]
+          test: /\.scss$/,
+          use: [
+            {
+              loader: "style-loader",
+            },
+            {
+              loader: "css-loader",
+            },
+            {
+              loader: "sass-loader",
+            },
+          ],
         }, //css only files
         { 
           test: /\.(png|svg|jpg|gif)$/, use: {
